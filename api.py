@@ -5,5 +5,3 @@ def cocktail(drink):
     # https://www.thecocktaildb.com/api/json/v1/1/random.php
     # print(response.status_code)
     return response.json()
-
-print(cocktail('margarita'))
