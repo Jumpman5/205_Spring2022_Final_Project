@@ -13,3 +13,16 @@ bootstrap = Bootstrap4(app)
 @app.route('/')
 def home():
     return render_template('home.html')
+
+
+
+
+'''
+how to run
+
+$env:FLASK_APP = "205_final_project.py"
+$env:FLASK_DEBUG = "1"
+flask run
+
+ctl + c
+'''
