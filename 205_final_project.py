@@ -16,15 +16,16 @@ def home():
 
 @app.route('/drink')
 def drink():
-    return render_template('drink.html')
+    cocktail = random_drink()
+    return render_template('drink.html', cocktail = cocktail)
 
-random_drink = random_drink()
-print(random_drink['drinks'][0]['strDrink']) # print name of drink
-print('-------------')
-for i in range(15): # 1-15 is all possible ingredients in each beverage
-    ingredient = random_drink['drinks'][0]['strIngredient'+str(i+1)]
-    if ingredient != None:
-        print(ingredient)
+# random_drink = random_drink()
+# print(random_drink['drinks'][0]['strDrink']) # print name of drink
+# print('-------------')
+# for i in range(15): # 1-15 is all possible ingredients in each beverage
+#     ingredient = random_drink['drinks'][0]['strIngredient'+str(i+1)]
+#     if ingredient != None:
+#         print(ingredient)
 
 
 

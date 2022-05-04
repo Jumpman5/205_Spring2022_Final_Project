@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+    <h1>Your cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
+    {% for i in range(15) %}
+        in = cocktail['drinks'][0]['strIngredient'+str(i+1)]
+        {% if in != None %}
+            <h1>in</h1><br>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
