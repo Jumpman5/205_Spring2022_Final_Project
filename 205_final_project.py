@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap5
 from api import *
 
 from api import *
@@ -8,11 +8,15 @@ from api import *
 # print(cocktail('margarita'))
 
 app = Flask(__name__)
-bootstrap = Bootstrap4(app)
+bootstrap = Bootstrap5(app)
 
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/drink')
+def drink():
+    return render_template('drink.html')
 
 random_drink = random_drink()
 print(random_drink['drinks'][0]['strDrink']) # print name of drink
