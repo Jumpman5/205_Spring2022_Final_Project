@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    {{ bootstrap.load_css() }}
+    {% block head %}
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      {% block styles %}
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }}
+      {% endblock %}
+
+      <title>Home</title>
+    {% endblock %}
 </head>
 <body>
     <div class="text-center">
-        <h1>Enter name of a cocktail</h1>
+        <h1 class="bg-info">Enter name of a cocktail</h1>
         <input type="text">
         <button type="button">Enter</button>
         <br><br><br><br><br>
-        <a href="{{ url_for('drink')}}" class="btn btn-primary">Random Drink</a>
+        <a href="{{ url_for('drink')}}" class="text-center btn btn-primary">Random Drink</a>
     </div>
 </body>
 </html>

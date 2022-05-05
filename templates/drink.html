@@ -9,10 +9,11 @@
 </head>
 <body>
     <h1>Your cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
+    <img src="{{cocktail['drinks'][0]['strDrinkThumb']}}" class="rounded w-50">
     {% for i in range(15) %}
-        in = cocktail['drinks'][0]['strIngredient'+str(i+1)]
-        {% if in != None %}
-            <h1>in</h1><br>
+        {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
+        {% if ing != None %}
+            <h1>{{ing}}</h1><br>
         {% endif %}
     {% endfor %}
 </body>
