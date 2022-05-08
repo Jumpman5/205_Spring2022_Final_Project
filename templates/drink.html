@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {{ bootstrap.load_css() }}
 </head>
 <body>
-    <h1>Your cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
-    <img src="{{cocktail['drinks'][0]['strDrinkThumb']}}" class="rounded w-50">
-    {% for i in range(15) %}
-        {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
-        {% if ing != None %}
-            <h1>{{ing}}</h1><br>
-        {% endif %}
-    {% endfor %}
+    <div class="text-center">
+        <h1>Your cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
+        <img src="{{cocktail['drinks'][0]['strDrinkThumb']}}" class="rounded w-50">
+        {% for i in range(15) %}
+            {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
+            {% if ing != None %}
+                <h1>{{ing}}</h1><br>
+            {% endif %}
+        {% endfor %}
+    </div>
 </body>
 </html>

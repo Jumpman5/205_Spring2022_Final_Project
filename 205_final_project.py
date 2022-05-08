@@ -1,11 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
 from api import *
-
-from api import *
-
-# print(cocktailRandom())
-# print(cocktail('margarita'))
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
@@ -14,10 +9,15 @@ bootstrap = Bootstrap5(app)
 def home():
     return render_template('home.html')
 
-@app.route('/drink')
+@app.route('/drink', methods=['POST', 'GET'])
 def drink():
-    cocktail = random_drink()
-    return render_template('drink.html', cocktail = cocktail)
+    if(request.method == 'POST'):  # used for when user wants specific drink
+        cocktail = cocktailByName(request.form.get("cocktailName")) # example margarita
+        return render_template('drink.html', cocktail = cocktail)
+    else: # assumes user hit random, since "Random Drink" buttom or a tag is not in form tag
+        cocktail = random_drink()
+        return render_template('drink.html', cocktail = cocktail)
+    
 
 # random_drink = random_drink()
 # print(random_drink['drinks'][0]['strDrink']) # print name of drink
@@ -26,8 +26,6 @@ def drink():
 #     ingredient = random_drink['drinks'][0]['strIngredient'+str(i+1)]
 #     if ingredient != None:
 #         print(ingredient)
-
-
 
 '''
 how to run
