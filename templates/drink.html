@@ -15,7 +15,7 @@
         {% for i in range(15) %}
             {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
             {% if ing != None %}
-                <h1>{{ing}}</h1><br>
+                <h1>{{ing}}   &nbsp; {{prices[i]}}</h1><br>
             {% endif %}
         {% endfor %}
     </div>
