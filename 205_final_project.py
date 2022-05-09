@@ -47,5 +47,9 @@ $env:FLASK_APP = "205_final_project.py"
 $env:FLASK_DEBUG = "1"
 flask run
 
+export FLASK_APP=205_final_project.py
+export FLASK_DEBUG=1
+flask run
+
 ctl + c
 '''

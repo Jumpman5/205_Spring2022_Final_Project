@@ -14,6 +14,9 @@ def getPrice(item): # gets first result price from amazon fresh
     URL = f"https://www.amazon.com/s?k={item}&i=amazonfresh"
     webpage = requests.get(URL, headers=HEADERS)
     soup = BeautifulSoup(webpage.content, "lxml")
-    title = soup.find("span", attrs={"class":'a-offscreen'}).string
+    title = "Price information not found"
+    found = soup.find("span", attrs={"class":'a-offscreen'})
+    if found:
+        title = found.string
     return title
     
