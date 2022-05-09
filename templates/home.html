@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      {% block styles %}
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }}
+      {% endblock %}
+
+      <title>Home</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="bg-info">Enter name of a cocktail</h1>
+
+        <form action="{{ url_for('drink')}}" method="post">
+          <input type="text" name="cocktailName">
+          <button class="text-center btn btn-primary">Enter</button>
+        </form>
+
+        <br><br><br><br><br>
+        <a href="{{ url_for('drink')}}" class="text-center btn btn-primary">Random Drink</a>
+    </div>
+</body>
+</html>
