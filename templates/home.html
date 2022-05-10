@@ -14,12 +14,14 @@
       <title>Home</title>
     {% endblock %}
 </head>
-<body>
+<body style="background-color: aqua; font-family: cursive;">
     <div class="text-center">
-        <h1 class="bg-info">Enter name of a cocktail</h1>
-
+      <br><br><br>
+        <h1>Enter Name of a Cocktail</h1>
+        <br>
         <form action="{{ url_for('drink')}}" method="post">
           <input type="text" name="cocktailName">
+          <br><br>
           <button class="text-center btn btn-primary">Enter</button>
         </form>
 

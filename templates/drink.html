@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {{ bootstrap.load_css() }}
 </head>
-<body>
+<body style="background-color: aqua; font-family: cursive;">
+    <br>
     <div class="text-center">
-        <h1>Your cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
+        <h1>Your Cocktail is {{cocktail['drinks'][0]['strDrink']}}</h1>
+        <br>
         <img src="{{cocktail['drinks'][0]['strDrinkThumb']}}" class="rounded w-50">
+        <br><br>
         {% for i in range(15) %}
             {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
             {% if ing != None %}
                 <h1>{{ing}}   &nbsp; {{prices[i]}}</h1><br>
             {% endif %}
         {% endfor %}
+        <form action="{{ url_for('drink')}}" method="post">
+          </form>
+          <br>
+          <a href="/" class="text-center btn btn-primary">Go Back</a>
+        <br><br>
     </div>
 </body>
 </html>
