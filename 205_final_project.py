@@ -35,3 +35,12 @@ def drink():
                 break
 
         return render_template('drink.html', cocktail = cocktail, prices=ingPrices)
+
+# stop deleting
+'''
+how to run
+$env:FLASK_APP = "205_final_project.py"
+$env:FLASK_DEBUG = "1"
+flask run
+ctl + c
+'''
