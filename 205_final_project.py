@@ -1,3 +1,11 @@
+'''
+Course: CST 205 MULTIMEDIA DESIGN & PROGRAMMING
+Title: 
+Abstract:
+Authors: David Eloy Saavedra, 
+Date: 
+'''
+
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
 from api import *
