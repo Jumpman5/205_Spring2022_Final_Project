@@ -34,6 +34,7 @@ def drink():
 
         return render_template('drink.html', cocktail=cocktail, prices=ingPrices, links=links, total=round(total_price,2))
 
+# returns list of ingredient prices, list of Amazon links for those ingredients, and total price of ingredients
 def getPriceAndLinks(cocktail):
     ingPrices = [] # prices of the ingredients
     links = []
@@ -47,6 +48,7 @@ def getPriceAndLinks(cocktail):
             break
     total_price = 0
     for price in ingPrices:
+        # make sure that price information was found from scraping
         if (type(price) != str):
             total_price += float(price[1:])
     return ingPrices,links,total_price
