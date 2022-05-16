@@ -16,7 +16,7 @@ $env:FLASK_DEBUG = "1"
 
 flask run
 
-Mac/linux:
+Mac/linux: (in terminal emulator of choice)
 
 export FLASK_APP=205_final_project.py
 
