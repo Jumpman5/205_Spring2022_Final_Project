@@ -18,9 +18,10 @@
         {% for i in range(15) %}
             {% set ing = cocktail['drinks'][0]['strIngredient%d'%(i+1)] %}
             {% if ing != None %}
-                <h1>{{ing}}   &nbsp; {{prices[i]}}</h1><br>
+                <a href="{{links[i]}}"><h1>{{ing}}   &nbsp; {{prices[i]}}</h1><br></a>
             {% endif %}
         {% endfor %}
+        <h1 class="text-success">Total: ${{total}}</h1>
         <form action="{{ url_for('drink')}}" method="post">
           </form>
           <br>
