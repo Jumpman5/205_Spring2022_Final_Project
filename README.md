@@ -1,10 +1,10 @@
-Name of project: 
+Name of project: Cocktail Finder
 
-Names of team members: David Eloy Saavedra, 
+Names of team members: David Eloy Saavedra, Nico Hartojo, Tyler Johnson-Haro
 
 Class: CST 205 MULTIMEDIA DESIGN & PROGRAMMING
 
-Date: 
+Date: 5/17/18
 
 How to run program:
 
@@ -26,4 +26,4 @@ flask run
 
 Link to GitHub repository: https://github.com/Jumpman5/205_Spring2022_Final_Project
 
-Future work: 
+Future work: Make site look prettier (more Bootsrap and CSS), use more scraping to compare prices from different sites, add multiple price results.
