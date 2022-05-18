@@ -8,6 +8,8 @@ Abstract: This program creates a website that people can use to search for cockt
 Authors: David Eloy Saavedra, Nico Hartojo, Tyler Johnson-Haro
 Date: 5/16/22
 github link: https://github.com/Jumpman5/205_Spring2022_Final_Project
+
+Trello link: https://trello.com/b/NcVZxl8s/cst205-final-proj
 '''
 
 from flask import Flask, render_template, request
@@ -17,11 +19,11 @@ from api import *
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
-@app.route('/')
-def home():
+@app.route('/') # home page with the random and certain drink button
+def home(): 
     return render_template('home.html')
 
-@app.route('/drink', methods=['POST', 'GET'])
+@app.route('/drink', methods=['POST', 'GET']) # from home page depending on which button was push it either does POST or GET
 def drink():
     if(request.method == 'POST'):  # used for when user wants specific drink
         cocktail = cocktailByName(request.form.get("cocktailName")) # example margarita
